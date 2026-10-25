@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.hospital.controller.DashboardController"
+            prefWidth="1100" prefHeight="700">
+
+    <!-- SIDEBAR -->
+    <left>
+        <VBox fx:id="sidebar" styleClass="sidebar" prefWidth="240">
+            <VBox styleClass="sidebar-header" alignment="CENTER_LEFT" spacing="4">
+                <padding><Insets top="24" right="20" bottom="24" left="20"/></padding>
+                <Label fx:id="lblSistema" text="&#x2695;  Sistema Hospitalario" styleClass="sidebar-logo"/>
+                <Label fx:id="lblUsuario" text="Administrador" styleClass="sidebar-user"/>
+            </VBox>
+
+            <Separator>
+                <padding><Insets top="4"/></padding>
+            </Separator>
+
+            <Button fx:id="btnToggleSidebar" text="&#x2630;   Menu" styleClass="toggle-sidebar-btn"
+                    onAction="#handleToggleSidebar" prefHeight="40"/>
+
+            <Separator/>
+
+            <Label text="PRINCIPAL" styleClass="sidebar-label"/>
+
+            <Button fx:id="btnDashboard" text="&#x1F4CA;   Dashboard" styleClass="menu-item-btn menu-item-btn-active"
+                    onAction="#handleDashboard" prefHeight="42"/>
+
+            <Label text="MODULOS" styleClass="sidebar-label"/>
+
+            <Button fx:id="btnDoctores" text="&#x1F468;   Doctores" styleClass="menu-item-btn"
+                    onAction="#handleDoctores" prefHeight="42"/>
+
+            <Button fx:id="btnPacientes" text="&#x1F464;   Pacientes" styleClass="menu-item-btn"
+                    onAction="#handlePacientes" prefHeight="42"/>
+
+            <Button fx:id="btnCitas" text="&#x1F4C5;   Citas Medicas" styleClass="menu-item-btn"
+                    onAction="#handleCitas" prefHeight="42"/>
+
+            <Button fx:id="btnHistorial" text="&#x1F4CB;   Historial Clinico" styleClass="menu-item-btn"
+                    onAction="#handleHistorial" prefHeight="42"/>
+
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <Separator/>
+
+            <Button fx:id="btnSalir" text="&#x274C;   Cerrar Sesion" styleClass="menu-item-btn"
+                    onAction="#handleSalir" prefHeight="42" style="-fx-text-fill: #ff8292;">
+            </Button>
+        </VBox>
+    </left>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <StackPane fx:id="contentArea" styleClass="content-area">
+        </StackPane>
+    </center>
+</BorderPane>

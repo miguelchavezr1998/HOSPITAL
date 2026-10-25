@@ -1,0 +1,20 @@
+{
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": ["src/main/java"],
+    "java.import.maven.enabled": true,
+    "java.project.referencedLibraries": [
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-base/21.0.7/javafx-base-21.0.7.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-base/21.0.7/javafx-base-21.0.7-win.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-controls/21.0.7/javafx-controls-21.0.7.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-controls/21.0.7/javafx-controls-21.0.7-win.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-fxml/21.0.7/javafx-fxml-21.0.7.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-fxml/21.0.7/javafx-fxml-21.0.7-win.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-graphics/21.0.7/javafx-graphics-21.0.7.jar",
+        "C:/Users/miguel/.m2/repository/org/openjfx/javafx-graphics/21.0.7/javafx-graphics-21.0.7-win.jar"
+    ],
+    "files.associations": {
+        "*.fxml": "xml",
+        "*.css": "css"
+    },
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable"
+}

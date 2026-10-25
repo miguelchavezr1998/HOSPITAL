@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hospital.controller.CitasController">
+
+    <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane">
+        <VBox spacing="0" styleClass="content-body">
+
+        <VBox spacing="0">
+            <padding><Insets bottom="20"/></padding>
+            <FlowPane alignment="CENTER_LEFT" hgap="16" vgap="12" styleClass="responsive-toolbar">
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label text="Gestion de Citas Medicas" styleClass="content-title"/>
+                    <Label text="Programar, editar y gestionar citas" styleClass="content-subtitle"/>
+                </VBox>
+                <Button fx:id="btnNuevaCita" text="+ Nueva Cita" styleClass="btn-primary"
+                        onAction="#handleNueva" prefHeight="40"/>
+            </FlowPane>
+        </VBox>
+
+        <!-- Busqueda y filtros -->
+        <FlowPane alignment="CENTER_LEFT" hgap="12" vgap="10" styleClass="responsive-toolbar">
+            <padding><Insets bottom="16"/></padding>
+            <TextField fx:id="txtBuscar" promptText="Buscar por paciente, doctor o motivo..."
+                       prefHeight="40" prefWidth="350" styleClass="text-field"/>
+            <Button text="Buscar" styleClass="btn-outline" onAction="#handleBuscar" prefHeight="40"/>
+            <ComboBox fx:id="cbFiltroEstado" prefHeight="40" prefWidth="160" promptText="Estado"/>
+            <Button text="Limpiar" styleClass="btn-secondary" onAction="#handleLimpiar" prefHeight="40"/>
+            <Button text="Exportar Excel" styleClass="btn-outline" onAction="#handleExportarExcel" prefHeight="40"/>
+            <Label fx:id="lblTotal" text="Total: 0 citas" style="-fx-text-fill: #64748b; -fx-font-size: 13px;"/>
+        </FlowPane>
+
+        <!-- Tabla de citas -->
+        <VBox fx:id="tableCard" styleClass="card" VBox.vgrow="ALWAYS">
+            <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+            <TableView fx:id="tableCitas" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colFecha" text="Fecha" prefWidth="110"/>
+                    <TableColumn fx:id="colHora" text="Hora" prefWidth="80"/>
+                    <TableColumn fx:id="colPaciente" text="Paciente" prefWidth="180"/>
+                    <TableColumn fx:id="colDoctor" text="Doctor" prefWidth="180"/>
+                    <TableColumn fx:id="colMotivo" text="Motivo" prefWidth="180"/>
+                    <TableColumn fx:id="colEstado" text="Estado" prefWidth="120"/>
+                    <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="160"/>
+                </columns>
+                <placeholder>
+                    <Label text="No hay citas programadas" style="-fx-text-fill: #94a3b8;"/>
+                </placeholder>
+            </TableView>
+        </VBox>
+
+        <!-- Formulario de cita -->
+        <VBox fx:id="formPanel" visible="false" managed="false" spacing="16" styleClass="card">
+            <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="formTitle" text="Nueva Cita" styleClass="card-title" HBox.hgrow="ALWAYS"/>
+                <Button text="X" styleClass="btn-secondary" onAction="#handleCerrarForm" prefWidth="32" prefHeight="32"/>
+            </HBox>
+
+            <FlowPane hgap="16" vgap="12" styleClass="responsive-form">
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="Paciente *" styleClass="form-label"/>
+                    <ComboBox fx:id="cbPaciente" prefHeight="38" promptText="Seleccionar paciente"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Doctor *" styleClass="form-label"/>
+                    <ComboBox fx:id="cbDoctor" prefHeight="38" promptText="Seleccionar doctor"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="Estado" styleClass="form-label"/>
+                    <ComboBox fx:id="cbEstado" prefHeight="38" promptText="Estado"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="Fecha *" styleClass="form-label"/>
+                    <DatePicker fx:id="dpFecha" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="Hora *" styleClass="form-label"/>
+                    <ComboBox fx:id="cbHora" prefHeight="38" promptText="Seleccionar hora"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <Label text=" " styleClass="form-label"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="3">
+                    <Label text="Motivo de la consulta *" styleClass="form-label"/>
+                    <TextField fx:id="txtMotivo" prefHeight="38" promptText="Describe el motivo de la cita"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="3">
+                    <Label text="Observaciones" styleClass="form-label"/>
+                    <TextArea fx:id="txtObservaciones" prefHeight="80" promptText="Notas adicionales..."/>
+                </VBox>
+            </FlowPane>
+
+            <HBox spacing="12" alignment="CENTER_RIGHT">
+                <padding><Insets top="16" right="0" bottom="0" left="0"/></padding>
+                <Button text="Cancelar" styleClass="btn-secondary" onAction="#handleCerrarForm"/>
+                <Button fx:id="btnGuardar" text="Guardar Cita" styleClass="btn-success"
+                        onAction="#handleGuardar"/>
+            </HBox>
+        </VBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

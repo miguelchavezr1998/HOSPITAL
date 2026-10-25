@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hospital.controller.DoctoresController">
+
+    <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane">
+        <VBox spacing="0" styleClass="content-body">
+
+        <VBox spacing="0">
+            <padding><Insets bottom="20"/></padding>
+            <FlowPane alignment="CENTER_LEFT" hgap="16" vgap="12" styleClass="responsive-toolbar">
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label text="Gestion de Doctores" styleClass="content-title"/>
+                    <Label text="Administrar registros de doctores" styleClass="content-subtitle"/>
+                </VBox>
+                <Button fx:id="btnNuevoDoctor" text="+ Nuevo Doctor" styleClass="btn-primary"
+                        onAction="#handleNuevo" prefHeight="40"/>
+            </FlowPane>
+        </VBox>
+
+        <FlowPane alignment="CENTER_LEFT" hgap="12" vgap="10" styleClass="responsive-toolbar">
+            <padding><Insets bottom="16"/></padding>
+            <TextField fx:id="txtBuscar" promptText="Buscar por nombre, apellido o especialidad..."
+                       prefHeight="40" prefWidth="400" styleClass="text-field"/>
+            <Button text="Buscar" styleClass="btn-outline" onAction="#handleBuscar" prefHeight="40"/>
+            <Button text="Limpiar" styleClass="btn-secondary" onAction="#handleLimpiar" prefHeight="40"/>
+            <Button text="Exportar Excel" styleClass="btn-outline" onAction="#handleExportarExcel" prefHeight="40"/>
+            <Label fx:id="lblTotal" text="Total: 0 doctores" style="-fx-text-fill: #64748b; -fx-font-size: 13px;"/>
+        </FlowPane>
+
+        <VBox fx:id="tableCard" styleClass="card" VBox.vgrow="ALWAYS">
+            <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+            <TableView fx:id="tableDoctores" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCedula" text="Cedula" prefWidth="110"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="200"/>
+                    <TableColumn fx:id="colEspecialidad" text="Especialidad" prefWidth="160"/>
+                    <TableColumn fx:id="colTelefono" text="Telefono" prefWidth="120"/>
+                    <TableColumn fx:id="colEmail" text="Email" prefWidth="180"/>
+                    <TableColumn fx:id="colHorario" text="Horario" prefWidth="120"/>
+                    <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No hay doctores registrados" style="-fx-text-fill: #94a3b8;"/>
+                </placeholder>
+            </TableView>
+        </VBox>
+
+        <VBox fx:id="formPanel" visible="false" managed="false" spacing="16" styleClass="card">
+            <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="formTitle" text="Nuevo Doctor" styleClass="card-title" HBox.hgrow="ALWAYS"/>
+                <Button text="X" styleClass="btn-secondary" onAction="#handleCerrarForm" prefWidth="32" prefHeight="32"/>
+            </HBox>
+
+            <FlowPane hgap="16" vgap="12" styleClass="responsive-form">
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="Cedula *" styleClass="form-label"/>
+                    <TextField fx:id="txtCedula" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Nombre *" styleClass="form-label"/>
+                    <TextField fx:id="txtNombre" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="Apellido *" styleClass="form-label"/>
+                    <TextField fx:id="txtApellido" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="Especialidad *" styleClass="form-label"/>
+                    <TextField fx:id="txtEspecialidad" prefHeight="38" promptText="Ej: Cardiologia"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="Telefono" styleClass="form-label"/>
+                    <TextField fx:id="txtTelefono" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <Label text="Email" styleClass="form-label"/>
+                    <TextField fx:id="txtEmail" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label text="Horario" styleClass="form-label"/>
+                    <TextField fx:id="txtHorario" prefHeight="38" promptText="Ej: 08:00 - 17:00"/>
+                </VBox>
+            </FlowPane>
+
+            <HBox spacing="12" alignment="CENTER_RIGHT">
+                <padding><Insets top="16" right="0" bottom="0" left="0"/></padding>
+                <Button text="Cancelar" styleClass="btn-secondary" onAction="#handleCerrarForm"/>
+                <Button fx:id="btnGuardar" text="Guardar Doctor" styleClass="btn-success"
+                        onAction="#handleGuardar"/>
+            </HBox>
+        </VBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

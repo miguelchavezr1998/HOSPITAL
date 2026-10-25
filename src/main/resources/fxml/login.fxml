@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hospital.controller.LoginController"
+           styleClass="login-container"
+           prefWidth="900" prefHeight="600">
+
+    <VBox alignment="CENTER" spacing="0" fillWidth="true">
+        <VBox styleClass="login-card" spacing="18" maxWidth="460" fillWidth="true">
+            <padding><Insets top="42" right="42" bottom="34" left="42"/></padding>
+
+            <VBox alignment="CENTER" spacing="4">
+                <Label text="&#x2695;" styleClass="login-symbol">
+                </Label>
+                <Label text="Sistema Hospitalario" styleClass="login-logo"/>
+                <Label text="Gestion integral de salud" styleClass="login-subtitle"/>
+            </VBox>
+
+            <Separator>
+                <padding><Insets top="10" bottom="10"/></padding>
+            </Separator>
+
+            <VBox spacing="4">
+                <Label text="Usuario" styleClass="form-label"/>
+                <TextField fx:id="txtUsuario" promptText="Ingrese su usuario"
+                           prefHeight="44" maxWidth="Infinity" styleClass="text-field"/>
+            </VBox>
+
+            <VBox spacing="4">
+                <Label text="Contrasena" styleClass="form-label"/>
+                <PasswordField fx:id="txtContrasena" promptText="Ingrese su contrasena"
+                           prefHeight="44" maxWidth="Infinity" styleClass="text-field"/>
+            </VBox>
+
+            <Button fx:id="btnIngresar" text="Ingresar" styleClass="btn-primary"
+                    prefHeight="46" maxWidth="Infinity" onAction="#handleLogin">
+            </Button>
+
+            <Label fx:id="lblError" text="" style="-fx-text-fill: #eb1736; -fx-font-size: 12px;"
+                   visible="false" managed="false"/>
+
+            <VBox alignment="CENTER" spacing="4">
+                <padding><Insets top="20"/></padding>
+                <Label text="Credenciales: admin / admin123" style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;"/>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>

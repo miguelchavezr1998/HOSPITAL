@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Run HospitalApp",
+            "request": "launch",
+            "mainClass": "com.hospital.App",
+            "vmArgs": "--module-path \"C:\\Users\\miguel\\.m2\\repository\\org\\openjfx\\javafx-base\\21.0.7\\javafx-base-21.0.7-win.jar;C:\\Users\\miguel\\.m2\\repository\\org\\openjfx\\javafx-controls\\21.0.7\\javafx-controls-21.0.7-win.jar;C:\\Users\\miguel\\.m2\\repository\\org\\openjfx\\javafx-fxml\\21.0.7\\javafx-fxml-21.0.7-win.jar;C:\\Users\\miguel\\.m2\\repository\\org\\openjfx\\javafx-graphics\\21.0.7\\javafx-graphics-21.0.7-win.jar\" --add-modules javafx.controls,javafx.fxml,javafx.graphics",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "HOSPITAL_DB_HOST": "${env:HOSPITAL_DB_HOST}",
+                "HOSPITAL_DB_PORT": "${env:HOSPITAL_DB_PORT}",
+                "HOSPITAL_DB_NAME": "${env:HOSPITAL_DB_NAME}",
+                "HOSPITAL_DB_USER": "${env:HOSPITAL_DB_USER}",
+                "HOSPITAL_DB_PASSWORD": "${env:HOSPITAL_DB_PASSWORD}"
+            }
+        }
+    ]
+}

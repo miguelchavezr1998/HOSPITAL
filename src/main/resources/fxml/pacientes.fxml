@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hospital.controller.PacientesController">
+
+    <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane">
+        <VBox spacing="0" styleClass="content-body">
+
+        <!-- Header con titulo y boton agregar -->
+        <VBox spacing="0">
+            <padding><Insets bottom="20"/></padding>
+            <FlowPane alignment="CENTER_LEFT" hgap="16" vgap="12" styleClass="responsive-toolbar">
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+                    <Label text="Gestion de Pacientes" styleClass="content-title"/>
+                    <Label text="Administrar registros de pacientes" styleClass="content-subtitle"/>
+                </VBox>
+                <Button fx:id="btnNuevoPaciente" text="+ Nuevo Paciente" styleClass="btn-primary"
+                        onAction="#handleNuevo" prefHeight="40"/>
+            </FlowPane>
+        </VBox>
+
+        <!-- Barra de busqueda -->
+        <FlowPane alignment="CENTER_LEFT" hgap="12" vgap="10" styleClass="responsive-toolbar">
+            <padding><Insets bottom="16"/></padding>
+            <TextField fx:id="txtBuscar" promptText="Buscar por nombre, apellido o cedula..."
+                       prefHeight="40" prefWidth="400" styleClass="text-field"/>
+            <Button text="Buscar" styleClass="btn-outline" onAction="#handleBuscar" prefHeight="40"/>
+            <Button text="Limpiar" styleClass="btn-secondary" onAction="#handleLimpiar" prefHeight="40"/>
+            <Button text="Exportar Excel" styleClass="btn-outline" onAction="#handleExportarExcel" prefHeight="40"/>
+            <Label fx:id="lblTotal" text="Total: 0 pacientes" style="-fx-text-fill: #64748b; -fx-font-size: 13px;"/>
+        </FlowPane>
+
+        <!-- Tabla de pacientes -->
+        <VBox fx:id="tableCard" styleClass="card" VBox.vgrow="ALWAYS">
+            <padding><Insets top="0" right="0" bottom="0" left="0"/></padding>
+            <TableView fx:id="tablePacientes" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colCedula" text="Cedula" prefWidth="110"/>
+                    <TableColumn fx:id="colNombre" text="Nombre" prefWidth="160"/>
+                    <TableColumn fx:id="colFechaNac" text="Fecha Nac." prefWidth="110"/>
+                    <TableColumn fx:id="colSexo" text="Sexo" prefWidth="70"/>
+                    <TableColumn fx:id="colTelefono" text="Telefono" prefWidth="120"/>
+                    <TableColumn fx:id="colSangre" text="Tipo Sangre" prefWidth="100"/>
+                    <TableColumn fx:id="colAlergias" text="Alergias" prefWidth="160"/>
+                    <TableColumn fx:id="colAcciones" text="Acciones" prefWidth="150"/>
+                </columns>
+                <placeholder>
+                    <Label text="No hay pacientes registrados" style="-fx-text-fill: #94a3b8;"/>
+                </placeholder>
+            </TableView>
+        </VBox>
+
+        <!-- Formulario (oculto por defecto) -->
+        <VBox fx:id="formPanel" visible="false" managed="false" spacing="16" styleClass="card">
+            <padding><Insets top="20" right="24" bottom="20" left="24"/></padding>
+
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="formTitle" text="Nuevo Paciente" styleClass="card-title" HBox.hgrow="ALWAYS"/>
+                <Button text="X" styleClass="btn-secondary" onAction="#handleCerrarForm" prefWidth="32" prefHeight="32"/>
+            </HBox>
+
+            <FlowPane hgap="16" vgap="12" styleClass="responsive-form">
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <Label text="Cedula *" styleClass="form-label"/>
+                    <TextField fx:id="txtCedula" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                    <Label text="Nombre *" styleClass="form-label"/>
+                    <TextField fx:id="txtNombre" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                    <Label text="Apellido *" styleClass="form-label"/>
+                    <TextField fx:id="txtApellido" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <Label text="Fecha Nacimiento" styleClass="form-label"/>
+                    <DatePicker fx:id="dpFechaNacimiento" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <Label text="Sexo" styleClass="form-label"/>
+                    <ComboBox fx:id="cbSexo" prefHeight="38" promptText="Seleccionar"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                    <Label text="Tipo de Sangre" styleClass="form-label"/>
+                    <ComboBox fx:id="cbTipoSangre" prefHeight="38" promptText="Seleccionar"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label text="Telefono" styleClass="form-label"/>
+                    <TextField fx:id="txtTelefono" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <Label text="Email" styleClass="form-label"/>
+                    <TextField fx:id="txtEmail" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                    <Label text="Direccion" styleClass="form-label"/>
+                    <TextField fx:id="txtDireccion" prefHeight="38"/>
+                </VBox>
+
+                <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                    <Label text="Alergias (separar con coma)" styleClass="form-label"/>
+                    <TextField fx:id="txtAlergias" prefHeight="38" promptText="Ej: Penicilina, Aspirina"/>
+                </VBox>
+            </FlowPane>
+
+            <HBox spacing="12" alignment="CENTER_RIGHT">
+                <padding><Insets top="16" right="0" bottom="0" left="0"/></padding>
+                <Button text="Cancelar" styleClass="btn-secondary" onAction="#handleCerrarForm"/>
+                <Button fx:id="btnGuardar" text="Guardar Paciente" styleClass="btn-success"
+                        onAction="#handleGuardar"/>
+            </HBox>
+        </VBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

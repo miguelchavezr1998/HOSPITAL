@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="com.hospital.controller.DashboardHomeController">
+
+    <ScrollPane fitToWidth="true" fitToHeight="true" styleClass="scroll-pane">
+        <!-- DASHBOARD HOME -->
+        <VBox fx:id="dashboardHome" spacing="24" styleClass="content-body">
+
+        <!-- Header -->
+        <VBox spacing="4">
+            <Label text="Dashboard" styleClass="content-title"/>
+            <Label text="Resumen general del sistema hospitalario" styleClass="content-subtitle"/>
+        </VBox>
+
+        <!-- Stats Row -->
+        <FlowPane fx:id="statsRow" hgap="20" vgap="16" styleClass="flow-pane-responsive">
+            <padding><Insets top="10"/></padding>
+        </FlowPane>
+
+        <!-- Info Cards -->
+        <FlowPane fx:id="infoCardsRow" hgap="20" vgap="20" styleClass="flow-pane-responsive">
+            <VBox styleClass="card" spacing="12">
+                <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
+                <Label text="Accesos Rapidos" styleClass="card-title"/>
+                <Label text="&#x1F464;  Gestionar pacientes, doctores y contacto" style="-fx-text-fill: #64748b;"/>
+                <Label text="&#x1F4C5;  Programar y gestionar citas medicas" style="-fx-text-fill: #64748b;"/>
+                <Label text="&#x1F4CB;  Registrar historial clinico" style="-fx-text-fill: #64748b;"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="12">
+                <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
+                <Label text="Informacion del Sistema" styleClass="card-title"/>
+                <Label text="Base de datos: PostgreSQL (sistema_hospitalario)" style="-fx-text-fill: #64748b;"/>
+                <Label text="Colecciones: pacientes, doctores, citas, historial_clinico" style="-fx-text-fill: #64748b;"/>
+                <Label text="Version: 1.0.0" style="-fx-text-fill: #64748b;"/>
+            </VBox>
+
+            <VBox styleClass="card" spacing="12">
+                <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
+                <Label text="Estado de la Base de Datos" styleClass="card-title"/>
+                <Label fx:id="lblEstadoDB" text="Conectado" style="-fx-text-fill: #059669;"/>
+                <Label fx:id="lblColecciones" text="4 colecciones activas" style="-fx-text-fill: #64748b;"/>
+            </VBox>
+        </FlowPane>
+        </VBox>
+    </ScrollPane>
+</StackPane>

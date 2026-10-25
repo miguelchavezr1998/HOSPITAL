@@ -1,0 +1,7 @@
+2026-10-25 09:06:30 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesión fallido para el usuario 'admin123'
+2026-10-25 09:06:37 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesión fallido para el usuario 'admin123'
+2026-10-25 09:06:41 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesión fallido para el usuario 'admin123'
+2026-10-25 09:10:10 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesión fallido para el usuario 'admin123'
+2026-10-25 09:10:13 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesión fallido para el usuario 'admin123'
+2026-10-25 09:10:41 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesión exitoso para el usuario 'admin'
+2026-10-25 09:11:32 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesión exitoso para el usuario 'admin'

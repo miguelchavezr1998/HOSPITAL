@@ -1,0 +1,30 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Ejecutar Sistema Hospitalario",
+            "type": "shell",
+            "command": "mvn",
+            "args": ["javafx:run"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$javac"],
+            "detail": "Compila y ejecuta la aplicacion"
+        },
+        {
+            "label": "Compilar",
+            "type": "shell",
+            "command": "mvn",
+            "args": ["compile"],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": ["$javac"]
+        }
+    ]
+}
