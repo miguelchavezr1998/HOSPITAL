@@ -2,7 +2,11 @@ package com.hospital.validation;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.LocalDate;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class PacienteValidatorTest {
@@ -27,5 +31,36 @@ class PacienteValidatorTest {
     @Test
     void validarCorreoCorrecto() {
         assertTrue(validator.validarCorreo("paciente@gmail.com"));
+    }
+
+    @Test
+    void validarDatosRequeridosConCamposOpcionalesVacios() {
+        assertNull(validator.validar(
+                "12345678", "Ana", "Lopez", "", "", null));
+    }
+
+    @Test
+    void rechazarCorreoInvalido() {
+        assertEquals(
+                "El correo electronico no es valido.",
+                validator.validar(
+                        "12345678", "Ana", "Lopez", "correo-invalido", "", null));
+    }
+
+    @Test
+    void rechazarTelefonoConCantidadIncorrectaDeDigitos() {
+        assertEquals(
+                "El telefono debe contener 9 digitos.",
+                validator.validar(
+                        "12345678", "Ana", "Lopez", "", "12345", null));
+    }
+
+    @Test
+    void rechazarFechaDeNacimientoFutura() {
+        assertEquals(
+                "La fecha de nacimiento no puede ser futura.",
+                validator.validar(
+                        "12345678", "Ana", "Lopez", "", "",
+                        LocalDate.now().plusDays(1)));
     }
 }

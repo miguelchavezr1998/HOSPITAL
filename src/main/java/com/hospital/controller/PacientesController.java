@@ -4,7 +4,7 @@ import com.hospital.dao.PacienteDAO;
 import com.hospital.model.Paciente;
 import com.hospital.util.AlertHelper;
 import com.hospital.util.ExcelExporter;
-import org.apache.commons.lang3.StringUtils;
+import com.hospital.validation.PacienteValidator;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -56,6 +56,8 @@ public class PacientesController {
     @FXML private Label lblTotal;
 
     private final PacienteDAO pacienteDAO = new PacienteDAO();
+    private final PacienteValidator pacienteValidator =
+            new PacienteValidator();
     private ObservableList<Paciente> listaPacientes;
     private Paciente pacienteSeleccionado = null;
 
@@ -284,18 +286,23 @@ public class PacientesController {
     }
 
     private boolean validarFormulario() {
-        if (StringUtils.isBlank(txtCedula.getText())) {
-            AlertHelper.mostrarAdvertencia("Validacion", "La cedula es requerida");
+        String mensaje = pacienteValidator.validar(
+                txtCedula.getText(),
+                txtNombre.getText(),
+                txtApellido.getText(),
+                txtEmail.getText(),
+                txtTelefono.getText(),
+                dpFechaNacimiento.getValue()
+        );
+
+        if (mensaje != null) {
+            AlertHelper.mostrarAdvertencia(
+                    "Validacion de paciente",
+                    mensaje
+            );
             return false;
         }
-        if (StringUtils.isBlank(txtNombre.getText())) {
-            AlertHelper.mostrarAdvertencia("Validacion", "El nombre es requerido");
-            return false;
-        }
-        if (StringUtils.isBlank(txtApellido.getText())) {
-            AlertHelper.mostrarAdvertencia("Validacion", "El apellido es requerido");
-            return false;
-        }
+
         return true;
     }
 
