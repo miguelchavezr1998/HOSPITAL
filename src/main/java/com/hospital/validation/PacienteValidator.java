@@ -1,9 +1,30 @@
 package com.hospital.validation;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 
 public class PacienteValidator {
+
+    public String validarCamposObligatorios(String sexo, String telefono,
+            String direccion) {
+        List<String> camposFaltantes = new ArrayList<>();
+        if (StringUtils.isBlank(sexo)) {
+            camposFaltantes.add("Sexo");
+        }
+        if (StringUtils.isBlank(telefono)) {
+            camposFaltantes.add("Telefono");
+        }
+        if (StringUtils.isBlank(direccion)) {
+            camposFaltantes.add("Direccion");
+        }
+
+        return camposFaltantes.isEmpty()
+                ? null
+                : "Completa los siguientes campos obligatorios: "
+                        + String.join(", ", camposFaltantes) + ".";
+    }
 
     public String validar(String cedula, String nombre, String apellido,
             String correo, String telefono, LocalDate fechaNacimiento) {

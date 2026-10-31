@@ -18,7 +18,7 @@
                 <Label text="&#x2695;" styleClass="login-symbol">
                 </Label>
                 <Label text="Sistema Hospitalario" styleClass="login-logo"/>
-                <Label text="Gestion integral de salud" styleClass="login-subtitle"/>
+                <Label text="Gestión integral de salud" styleClass="login-subtitle"/>
             </VBox>
 
             <Separator>
@@ -32,8 +32,8 @@
             </VBox>
 
             <VBox spacing="4">
-                <Label text="Contrasena" styleClass="form-label"/>
-                <PasswordField fx:id="txtContrasena" promptText="Ingrese su contrasena"
+                <Label text="Contraseña" styleClass="form-label"/>
+                <PasswordField fx:id="txtContrasena" promptText="Ingrese su contraseña"
                            prefHeight="44" maxWidth="Infinity" styleClass="text-field"/>
             </VBox>
 
@@ -46,7 +46,7 @@
 
             <VBox alignment="CENTER" spacing="4">
                 <padding><Insets top="20"/></padding>
-                <Label text="Credenciales: admin / admin123" style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;"/>
+                <Label text="Credenciales: admin / 123456789" style="-fx-text-fill: #94a3b8; -fx-font-size: 11px;"/>
             </VBox>
         </VBox>
     </VBox>

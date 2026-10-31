@@ -286,6 +286,20 @@ public class PacientesController {
     }
 
     private boolean validarFormulario() {
+        String camposObligatorios = pacienteValidator.validarCamposObligatorios(
+                cbSexo.getValue(),
+                txtTelefono.getText(),
+                txtDireccion.getText()
+        );
+
+        if (camposObligatorios != null) {
+            AlertHelper.mostrarAdvertencia(
+                    "Validacion de paciente",
+                    camposObligatorios
+            );
+            return false;
+        }
+
         String mensaje = pacienteValidator.validar(
                 txtCedula.getText(),
                 txtNombre.getText(),

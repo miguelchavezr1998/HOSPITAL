@@ -16,7 +16,7 @@
             <padding><Insets bottom="20"/></padding>
             <FlowPane alignment="CENTER_LEFT" hgap="16" vgap="12" styleClass="responsive-toolbar">
                 <VBox spacing="2" HBox.hgrow="ALWAYS">
-                    <Label text="Gestion de Citas Medicas" styleClass="content-title"/>
+                    <Label text="Gestión de Citas Médicas" styleClass="content-title"/>
                     <Label text="Programar, editar y gestionar citas" styleClass="content-subtitle"/>
                 </VBox>
                 <Button fx:id="btnNuevaCita" text="+ Nueva Cita" styleClass="btn-primary"

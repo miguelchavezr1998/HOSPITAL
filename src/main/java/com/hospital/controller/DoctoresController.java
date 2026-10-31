@@ -277,6 +277,14 @@ public class DoctoresController {
             AlertHelper.mostrarAdvertencia("Validacion", "La especialidad es requerida");
             return false;
         }
+        if (StringUtils.isBlank(txtEmail.getText())) {
+            AlertHelper.mostrarAdvertencia("Validacion", "El email es requerido");
+            return false;
+        }
+        if (StringUtils.isBlank(txtHorario.getText())) {
+            AlertHelper.mostrarAdvertencia("Validacion", "El horario es requerido");
+            return false;
+        }
         return true;
     }
 

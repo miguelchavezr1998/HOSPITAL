@@ -478,7 +478,7 @@
     -fx-border-width: 1.5;
     -fx-border-radius: 10;
     -fx-background-radius: 10;
-    -fx-padding: 8 12;
+    -fx-padding: 4 12;
     -fx-font-size: 14px;
     -fx-max-width: Infinity;
 }

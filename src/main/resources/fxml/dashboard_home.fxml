@@ -36,7 +36,7 @@
 
             <VBox styleClass="card" spacing="12">
                 <padding><Insets top="16" right="20" bottom="16" left="20"/></padding>
-                <Label text="Informacion del Sistema" styleClass="card-title"/>
+                <Label text="Información del Sistema" styleClass="card-title"/>
                 <Label text="Base de datos: PostgreSQL (sistema_hospitalario)" style="-fx-text-fill: #64748b;"/>
                 <Label text="Colecciones: pacientes, doctores, citas, historial_clinico" style="-fx-text-fill: #64748b;"/>
                 <Label text="Version: 1.0.0" style="-fx-text-fill: #64748b;"/>

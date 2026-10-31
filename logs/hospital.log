@@ -1,7 +1,9 @@
-2026-10-25 09:06:30 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesi髇 fallido para el usuario 'admin123'
-2026-10-25 09:06:37 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesi髇 fallido para el usuario 'admin123'
-2026-10-25 09:06:41 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesi髇 fallido para el usuario 'admin123'
-2026-10-25 09:10:10 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesi髇 fallido para el usuario 'admin123'
-2026-10-25 09:10:13 WARN  [JavaFX Application Thread] c.h.controller.LoginController - Intento de inicio de sesi髇 fallido para el usuario 'admin123'
-2026-10-25 09:10:41 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi髇 exitoso para el usuario 'admin'
-2026-10-25 09:11:32 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi髇 exitoso para el usuario 'admin'
+2026-10-30 15:46:17 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi贸n exitoso para el usuario 'admin'
+2026-10-30 15:47:21 INFO  [JavaFX Application Thread] com.hospital.dao.DoctorDAO - Registro de doctor actualizado correctamente
+2026-10-30 15:48:10 INFO  [JavaFX Application Thread] com.hospital.dao.PacienteDAO - Registro de paciente actualizado correctamente
+2026-10-30 15:49:09 INFO  [JavaFX Application Thread] com.hospital.dao.PacienteDAO - Registro de paciente actualizado correctamente
+2026-10-30 15:50:09 INFO  [JavaFX Application Thread] com.hospital.dao.PacienteDAO - Registro de paciente actualizado correctamente
+2026-10-30 20:57:04 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi贸n exitoso para el usuario 'admin'
+2026-10-30 21:01:34 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi贸n exitoso para el usuario 'admin'
+2026-10-30 21:20:00 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi贸n exitoso para el usuario 'admin'
+2026-10-30 21:23:36 INFO  [JavaFX Application Thread] c.h.controller.LoginController - Inicio de sesi贸n exitoso para el usuario 'admin'

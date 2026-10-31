@@ -88,7 +88,7 @@
                 </VBox>
 
                 <VBox spacing="4" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                    <Label text="Sexo" styleClass="form-label"/>
+                    <Label text="Sexo *" styleClass="form-label"/>
                     <ComboBox fx:id="cbSexo" prefHeight="38" promptText="Seleccionar"/>
                 </VBox>
 
@@ -98,7 +98,7 @@
                 </VBox>
 
                 <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                    <Label text="Telefono" styleClass="form-label"/>
+                    <Label text="Telefono *" styleClass="form-label"/>
                     <TextField fx:id="txtTelefono" prefHeight="38"/>
                 </VBox>
 
@@ -108,7 +108,7 @@
                 </VBox>
 
                 <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="2">
-                    <Label text="Direccion" styleClass="form-label"/>
+                    <Label text="Direccion *" styleClass="form-label"/>
                     <TextField fx:id="txtDireccion" prefHeight="38"/>
                 </VBox>
 

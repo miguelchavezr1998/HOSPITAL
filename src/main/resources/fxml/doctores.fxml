@@ -88,12 +88,12 @@
                 </VBox>
 
                 <VBox spacing="4" GridPane.columnIndex="2" GridPane.rowIndex="1">
-                    <Label text="Email" styleClass="form-label"/>
+                    <Label text="Email *" styleClass="form-label"/>
                     <TextField fx:id="txtEmail" prefHeight="38"/>
                 </VBox>
 
                 <VBox spacing="4" GridPane.columnIndex="0" GridPane.rowIndex="2">
-                    <Label text="Horario" styleClass="form-label"/>
+                    <Label text="Horario *" styleClass="form-label"/>
                     <TextField fx:id="txtHorario" prefHeight="38" promptText="Ej: 08:00 - 17:00"/>
                 </VBox>
             </FlowPane>
