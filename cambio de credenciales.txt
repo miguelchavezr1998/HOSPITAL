@@ -1,0 +1,15 @@
+ZxCvbnm123456
+
+
+INSERT INTO usuarios (id, usuario, password_hash, rol)
+VALUES ('usr-001', 'admin', '123456789', 'admin')
+ON CONFLICT (usuario) DO NOTHING;
+
+ --para actualizar contraseña:
+COMMIT;
+INSERT INTO usuarios (id, usuario, password_hash, rol)
+VALUES ('usr-001', 'admin', '123456789', 'admin')
+ON CONFLICT (usuario) 
+DO UPDATE SET password_hash = EXCLUDED.password_hash;
+
+COMMIT;
